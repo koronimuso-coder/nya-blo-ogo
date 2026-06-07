@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/kanaga.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nya Blo — L'Univers Digital Africain. Créer, Apprendre, Vivre. Tout ici." />
+  <meta name="theme-color" content="#0A0A14" />
+  <meta name="author" content="NYA BLO SARL" />
+  <meta name="robots" content="index, follow" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Open Graph defaults (overridden per-page by SEOHead) -->
+  <meta property="og:site_name" content="NYA BLO" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Structured Data — Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NYA BLO",
+    "url": "https://nyablo.com",
+    "logo": "https://nyablo.com/kanaga.svg",
+    "description": "L'Univers Digital Africain — Créer, Apprendre, Vivre.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Abidjan",
+      "addressCountry": "CI"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+225-07-08-73-68-71",
+      "contactType": "customer service",
+      "email": "nyablo@outlook.com",
+      "availableLanguage": ["French", "English"]
+    },
+    "sameAs": [
+      "https://facebook.com/nyablo",
+      "https://instagram.com/nyablo",
+      "https://x.com/nyablo",
+      "https://linkedin.com/company/nyablo"
+    ]
+  }
+  </script>
+
+  <title>Nya Blo — L'Univers Digital Africain</title>
+</head>
+
+<body>
+  <!-- Skip to content for accessibility -->
+  <a href="#main-content" class="sr-only focus-visible-link" style="
+    position: absolute; top: -100%; left: 50%; transform: translateX(-50%);
+    z-index: 99999; padding: 12px 24px; background: var(--nya-ochre); color: #fff;
+    border-radius: 0 0 8px 8px; font-weight: 700; font-size: 0.85rem; text-decoration: none;
+    transition: top 0.2s;
+  ">Aller au contenu principal</a>
+
+  <div id="root"></div>
+  <script>
+    // Flicker-free theme initialization — runs before React
+    (function () {
+      var t = localStorage.getItem('nya-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var mc = document.querySelector('meta[name="theme-color"]');
+      if (mc) mc.setAttribute('content', t === 'dark' ? '#000000' : '#FAFAF8');
+    })();
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

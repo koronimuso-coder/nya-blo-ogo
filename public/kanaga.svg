@@ -1,0 +1,12 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="kanagaGrad" x1="0" y1="0" x2="40" y2="40">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#D4A017"/>
+      <stop offset="100%" stop-color="#C8641A"/>
+    </linearGradient>
+  </defs>
+  <path d="M20 4 L36 20 L20 36 L4 20 Z" stroke="url(#kanagaGrad)" stroke-width="2" fill="none"/>
+  <path d="M20 10 L30 20 L20 30 L10 20 Z" fill="url(#kanagaGrad)" opacity="0.3"/>
+  <path d="M20 14 L26 20 L20 26 L14 20 Z" fill="url(#kanagaGrad)"/>
+</svg>

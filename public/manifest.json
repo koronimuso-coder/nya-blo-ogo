@@ -1,0 +1,18 @@
+{
+  "name": "NYA BLO — Écosystème Sirius",
+  "short_name": "NYA BLO",
+  "description": "L'univers Dogon numérique — Marketplace, VTC, Académie, Immobilier, Santé.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#B85C2E",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "shopping", "education", "lifestyle"]
+}

@@ -1,0 +1,168 @@
+{
+    "app": {
+        "name": "Nya Blo",
+        "tagline": "L'Univers Digital Africain",
+        "subtitle": "Créer. Apprendre. Vivre. Tout ici."
+    },
+    "nav": {
+        "home": "Accueil",
+        "discover": "Découvrir",
+        "news": "Nya News",
+        "ai": "Nya AI",
+        "create": "Nya Create",
+        "learn": "Nya Learn",
+        "docs": "Nya Docs",
+        "music": "Nya Music",
+        "podcast": "Nya Podcast",
+        "langue": "Nya Langue",
+        "stream": "Nya Stream",
+        "tube": "Nya Tube",
+        "play": "Nya Play",
+        "books": "Nya Books",
+        "events": "Nya Events",
+        "live": "Nya Live",
+        "comedy": "Nya Comedy",
+        "sport": "Nya Sport",
+        "social": "Nya Social",
+        "chat": "Nya Chat",
+        "forum": "Nya Forum",
+        "network": "Nya Network",
+        "quiz": "Nya Quiz",
+        "interview": "Nya Interview",
+        "shop": "Nya Shop",
+        "digital": "Nya Digital",
+        "streamingShop": "Nya Streaming Shop",
+        "fashion": "Nya Fashion",
+        "electronique": "Nya Électronique",
+        "crowdfunding": "Nya Crowdfunding",
+        "digitalMarket": "Nya Digital Market",
+        "vtc": "Nya VTC",
+        "pharmacie": "Nya Pharmacie",
+        "immobilier": "Nya Immobilier",
+        "transit": "Nya Transit",
+        "jobs": "Nya Jobs",
+        "agriculture": "Nya Agriculture",
+        "realEstate": "Nya Real Estate",
+        "health": "Nya Health",
+        "fitness": "Nya Fitness",
+        "food": "Nya Food",
+        "meditation": "Nya Méditation",
+        "genealogy": "Nya Généalogie",
+        "tools": "Nya Tools",
+        "finance": "Nya Finance",
+        "calendar": "Nya Calendrier",
+        "files": "Nya Files",
+        "mail": "Nya Mail",
+        "survey": "Nya Survey",
+        "affiliate": "Nya Affiliate",
+        "spiritual": "Nya Spiritual",
+        "fashionMag": "Nya Fashion Mag",
+        "travel": "Nya Travel",
+        "photography": "Nya Photography",
+        "kids": "Nya Kids",
+        "rewards": "Nya Rewards",
+        "verse": "Nya Verse",
+        "startup": "Nya Startup",
+        "apiDocs": "Nya API Docs",
+        "status": "Nya Status",
+        "changelog": "Nya Changelog",
+        "support": "Nya Support",
+        "profile": "Profil",
+        "settings": "Paramètres",
+        "subscription": "Abonnement",
+        "wallet": "Nya Wallet",
+        "admin": "Admin Panel"
+    },
+    "groups": {
+        "explore": "Explorer",
+        "createLearn": "Créer & Apprendre",
+        "entertainment": "Entertainment",
+        "community": "Communauté",
+        "business": "Boutiques & Business",
+        "services": "Services & Proximité",
+        "wellness": "Vie & Bien-être",
+        "proTools": "Outils Professionnels",
+        "culture": "Culture & Lifestyle",
+        "platform": "Plateforme"
+    },
+    "auth": {
+        "login": "Se connecter",
+        "register": "Créer un compte",
+        "email": "Adresse email",
+        "password": "Mot de passe",
+        "forgotPassword": "Mot de passe oublié ?",
+        "loginWith": "Se connecter avec",
+        "noAccount": "Pas encore de compte ?",
+        "hasAccount": "Déjà un compte ?",
+        "demoAccess": "Accès démo"
+    },
+    "common": {
+        "search": "Rechercher...",
+        "loading": "Chargement...",
+        "comingSoon": "Bientôt disponible",
+        "comingSoonDesc": "Cette section de l'univers Nya Blo est en cours de création. Revenez bientôt pour découvrir quelque chose d'extraordinaire.",
+        "backHome": "Retour à l'accueil",
+        "notifications": "Notifications",
+        "seeAll": "Voir tout",
+        "learnMore": "En savoir plus",
+        "getStarted": "Commencer",
+        "subscribe": "S'abonner"
+    },
+    "home": {
+        "heroTitle": "L'Univers Digital Africain",
+        "heroSub": "Tout ce dont tu as besoin. Un seul endroit.",
+        "stats": {
+            "users": "Utilisateurs",
+            "courses": "Cours",
+            "modules": "Modules",
+            "countries": "Pays"
+        },
+        "features": "Nos Modules",
+        "testimonials": "Témoignages",
+        "newsletter": "Rejoins la communauté",
+        "newsletterSub": "Reçois les dernières nouveautés de Nya Blo"
+    },
+    "errors": {
+        "404": "Page non trouvée",
+        "404desc": "Cette étoile ne figure pas dans la carte céleste Dogon. La constellation que tu cherches n'existe pas.",
+        "goBack": "Retourner à l'accueil"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Une question ? Un partenariat ? Notre équipe est prête à vous répondre.",
+        "form": {
+            "name": "Nom complet",
+            "email": "Adresse email",
+            "subject": "Sujet",
+            "message": "Message",
+            "send": "Envoyer le message",
+            "sent": "Message envoyé",
+            "sentDesc": "Nous vous répondrons dans les plus brefs délais."
+        }
+    },
+    "faq": {
+        "title": "Questions Fréquentes",
+        "subtitle": "Oracle des Réponses"
+    },
+    "newsletter": {
+        "title": "Rejoins la communauté",
+        "subtitle": "Reçois les dernières nouvelles de l'écosystème.",
+        "placeholder": "ton@email.com",
+        "subscribe": "S'inscrire",
+        "success": "Inscription confirmée — Bienvenue dans le Nexus"
+    },
+    "testimonials": {
+        "title": "Témoignages",
+        "subtitle": "Voix de la Communauté"
+    },
+    "privacy": {
+        "title": "Politique de Confidentialité",
+        "subtitle": "Protection Sirius"
+    },
+    "cookies": {
+        "title": "Cookies & Confidentialité",
+        "description": "NYA BLO utilise des cookies pour améliorer votre expérience.",
+        "accept": "Accepter tout",
+        "refuse": "Refuser"
+    }
+}
