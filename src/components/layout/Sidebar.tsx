@@ -11,7 +11,7 @@ import {
     Activity, Dumbbell, UtensilsCrossed, Brain, TreePine,
     Wrench, Wallet, CalendarDays, FolderOpen, Mail,
     BarChart3, DollarSign, Sparkles, Camera, PlaneTakeoff,
-    Image, Baby, Award, Box, Rocket, Code, Wifi, ListChecks,
+    Image, Baby, Award, Box, Rocket, Code, Wifi, ListChecks, Shield,
     Headphones, ChevronLeft, ChevronRight, type LucideIcon
 } from 'lucide-react'
 
@@ -92,6 +92,7 @@ const navGroups: NavGroup[] = [
         title: 'OUTILS PRO', items: [
             { icon: Wrench, label: 'Tools', path: '/tools' },
             { icon: Wallet, label: 'Finance', path: '/finance' },
+            { icon: Wifi, label: 'Simulateur USSD', path: '/ussd' },
             { icon: CalendarDays, label: 'Calendrier', path: '/calendar' },
             { icon: FolderOpen, label: 'Files', path: '/files' },
             { icon: Mail, label: 'Mail', path: '/mail' },
@@ -111,6 +112,7 @@ const navGroups: NavGroup[] = [
     {
         title: 'PLATEFORME', items: [
             { icon: Award, label: 'Rewards', path: '/rewards' },
+            { icon: Shield, label: 'Identité KYC', path: '/kyc' },
             { icon: Box, label: 'Verse', path: '/verse' },
             { icon: Rocket, label: 'Startup', path: '/startup' },
             { icon: Code, label: 'API Docs', path: '/api-docs' },

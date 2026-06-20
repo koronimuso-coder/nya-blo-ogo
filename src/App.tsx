@@ -4,11 +4,11 @@ import ParticleBackground from './components/animations/ParticleBackground'
 import GrainOverlay from './components/animations/GrainOverlay'
 import FloatingSymbols from './components/animations/FloatingSymbols'
 import SmoothScroll from './components/animations/SmoothScroll'
-import CookieBanner from './components/CookieBanner'
-import BackToTop from './components/BackToTop'
 import ErrorBoundary from './components/ErrorBoundary'
-import SearchOverlay from './components/SearchOverlay'
-import ScrollToTop from './components/ScrollToTop'
+import AmbientAudio from './components/AmbientAudio'
+import AchievementToast from './components/AchievementToast'
+import NotificationCenter from './components/NotificationCenter'
+import CartDrawer from './components/CartDrawer'
 import './i18n'
 import './styles/globals.css'
 
@@ -32,16 +32,17 @@ export default function App() {
         <FloatingSymbols />
         <GrainOverlay />
 
-        {/* App */}
+        {/* Global overlays that DON'T need Router context */}
+        <AchievementToast />
+        <NotificationCenter />
+        <CartDrawer />
+        <AmbientAudio />
+
+        {/* App — CommandPalette is inside RootLayout (needs Router context) */}
         <div id="main-content">
           <RouterProvider router={router} />
         </div>
 
-        {/* Global overlays */}
-        <SearchOverlay />
-        <ScrollToTop />
-        <BackToTop />
-        <CookieBanner />
       </SmoothScroll>
     </ErrorBoundary>
   )

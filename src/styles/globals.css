@@ -25,6 +25,7 @@
   --nya-gold: #D4A017;
   --nya-bright-gold: #FFD700;
   --nya-terracotta: #C8641A;
+  --nya-red: #ef4444;
 
   /* UI colors */
   --nya-ivory: #F5F0E8;
@@ -1981,4 +1982,27 @@ html {
 
 html *:not([style*="transition"]) {
   transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* ═══════════════════════════════════════════
+   KBD HINT (Ctrl+K)
+   ═══════════════════════════════════════════ */
+.kbd-hint {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.kbd-hint:hover {
+  border-color: var(--nya-ochre);
+  color: var(--nya-ochre);
+  background: rgba(184,92,46,0.05);
 }
