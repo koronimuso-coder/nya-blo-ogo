@@ -7,12 +7,13 @@ import {
     Calendar, Radio, Laugh, Trophy, Globe, MessageCircle, Users,
     Briefcase, HelpCircle, Target, ShoppingCart, Monitor,
     Shirt, Cpu, Heart, Store, Car, Cross, Building2, Ship,
-    BriefcaseBusiness, Sprout,
+    Sprout,
     Activity, Dumbbell, UtensilsCrossed, Brain, TreePine,
     Wrench, Wallet, CalendarDays, FolderOpen, Mail,
     BarChart3, DollarSign, Sparkles, Camera, PlaneTakeoff,
     Image, Baby, Award, Box, Rocket, Code, Wifi, ListChecks, Shield,
-    Headphones, ChevronLeft, ChevronRight, type LucideIcon
+    Headphones, ChevronLeft, ChevronRight, AppWindow, Ticket, Crown, type LucideIcon
+
 } from 'lucide-react'
 
 interface NavItem { icon: LucideIcon; label: string; path: string }
@@ -72,10 +73,11 @@ const navGroups: NavGroup[] = [
     {
         title: 'SERVICES', items: [
             { icon: Car, label: 'Nya VTC', path: '/vtc' },
+            { icon: Ticket, label: 'Sirius Voyage', path: '/tickets' },
             { icon: Cross, label: 'Pharmacie', path: '/pharmacie' },
             { icon: Building2, label: 'Immobilier', path: '/immobilier' },
             { icon: Ship, label: 'Transit', path: '/transit' },
-            { icon: BriefcaseBusiness, label: 'Nya Jobs', path: '/jobs' },
+            { icon: Briefcase, label: 'Nya Gigs', path: '/gigs' },
             { icon: Sprout, label: 'Agriculture', path: '/agriculture' },
         ]
     },
@@ -111,6 +113,8 @@ const navGroups: NavGroup[] = [
     },
     {
         title: 'PLATEFORME', items: [
+            { icon: AppWindow, label: 'Sirius Mini-Hub', path: '/minihub' },
+            { icon: Crown, label: 'Sirius Pass', path: '/siriuspass' },
             { icon: Award, label: 'Rewards', path: '/rewards' },
             { icon: Shield, label: 'Identité KYC', path: '/kyc' },
             { icon: Box, label: 'Verse', path: '/verse' },

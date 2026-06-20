@@ -70,6 +70,13 @@ const Transit = lazy(() => import('../pages/Transit'))
 const Kyc = lazy(() => import('../pages/Kyc'))
 const Ussd = lazy(() => import('../pages/Ussd'))
 
+// ─── Phase IV International Upgrade Pages ───
+const MiniHub = lazy(() => import('../pages/MiniHub'))
+const Tickets = lazy(() => import('../pages/Tickets'))
+const Gigs = lazy(() => import('../pages/Gigs'))
+const SiriusPass = lazy(() => import('../pages/SiriusPass'))
+
+
 // Loader wrapper — "Synchronisation Sirius..." matching reference
 function SuspenseWrap({ children }: { children: React.ReactNode }) {
     return (
@@ -201,6 +208,13 @@ export const router = createBrowserRouter([
             { path: 'transit', element: <SuspenseWrap><Transit /></SuspenseWrap> },
             { path: 'kyc', element: <SuspenseWrap><Kyc /></SuspenseWrap> },
             { path: 'ussd', element: <SuspenseWrap><Ussd /></SuspenseWrap> },
+
+            // ═══ Phase IV International Upgrade routes ═══
+            { path: 'minihub', element: <SuspenseWrap><MiniHub /></SuspenseWrap> },
+            { path: 'tickets', element: <SuspenseWrap><Tickets /></SuspenseWrap> },
+            { path: 'gigs', element: <SuspenseWrap><Gigs /></SuspenseWrap> },
+            { path: 'siriuspass', element: <SuspenseWrap><SiriusPass /></SuspenseWrap> },
+
 
             // ═══ Remaining module routes (ComingSoon) ═══
             ...comingSoonPaths.map((p) => ({

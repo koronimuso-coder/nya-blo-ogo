@@ -7,6 +7,8 @@ import Starfield from '../components/animations/Starfield'
 import CosmicBackground from '../components/animations/CosmicBackground'
 import ScrollProgress from '../components/animations/ScrollProgress'
 import SEOHead from '../components/SEOHead'
+import NommoVoice from '../components/NommoVoice'
+
 import {
     Flame, Coins, Award, Trophy, TrendingUp,
     Gamepad2, Bot, FileText, Store, GraduationCap,
@@ -358,6 +360,7 @@ export default function Dashboard() {
             </section>
 
             <Footer />
+            <NommoVoice />
         </div>
     )
 }
