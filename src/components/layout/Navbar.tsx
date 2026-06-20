@@ -257,11 +257,9 @@ export default function Navbar() {
                             onClick={handleThemeToggle}
                             style={{
                                 width: 40, height: 40, borderRadius: '50%',
-                                background: theme === 'dark'
-                                    ? 'linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,165,0,0.05))'
-                                    : 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.05))',
-                                border: `1px solid ${theme === 'dark' ? 'rgba(255,215,0,0.2)' : 'rgba(99,102,241,0.2)'}`,
-                                color: theme === 'dark' ? 'var(--nya-gold)' : '#6366f1',
+                                background: 'var(--bg-elevated)',
+                                border: '1px solid var(--border-hover)',
+                                color: 'var(--nya-gold)',
                                 cursor: 'pointer',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                                 transition: 'background 0.5s, border 0.5s, color 0.5s',

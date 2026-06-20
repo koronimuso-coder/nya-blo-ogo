@@ -10,70 +10,69 @@
 :root,
 [data-theme="dark"] {
   /* Core palette — Dark theme */
-  --nya-black: #000000;
-  --nya-void: #050505;
-  --nya-deep: #0A0A0F;
-  --nya-surface: #111116;
-  --nya-card: #161620;
+  --nya-black: #170d08; /* Deep Chocolate Dark */
+  --nya-void: #1E110A;  /* Rich Dark Brown */
+  --nya-deep: #25160F;  /* Cocoa Brown */
+  --nya-surface: #2E1A11; /* Warm Brown */
+  --nya-card: #351F14;    /* Light Cocoa */
 
   /* Accent colors */
-  --nya-ochre: #B85C2E;
-  --nya-ochre-light: #D4793F;
-  --nya-ochre-dark: #8B4522;
+  --nya-ochre: #8B4522;   /* Sienna/Brown */
+  --nya-ochre-light: #B85C2E;
+  --nya-ochre-dark: #5C2D13;
   --nya-sand: #C2A888;
   --nya-sand-light: #D4BFA8;
-  --nya-gold: #D4A017;
-  --nya-bright-gold: #FFD700;
-  --nya-terracotta: #C8641A;
-  --nya-red: #ef4444;
+  --nya-gold: #3B82F6;    /* BLUE (instead of Gold) representing the water/Sky */
+  --nya-bright-gold: #60A5FA; /* Bright Blue */
+  --nya-terracotta: #A54F1F;
+  --nya-red: #EF4444;     /* RED */
 
   /* UI colors */
-  --nya-ivory: #F5F0E8;
-  --nya-white: #FFFFFF;
-  --nya-sirius: #00E5A0;
-  --nya-sirius-dim: #00B87A;
-  --nya-cyan-dot: #00CED1;
-  --nya-red: #EF4444;
-  --nya-amber: #F59E0B;
+  --nya-ivory: #FDFBF7;   /* Ivory White */
+  --nya-white: #FFFFFF;   /* Pure White */
+  --nya-sirius: #EF4444;  /* Red Accent */
+  --nya-sirius-dim: #DC2626;
+  --nya-cyan-dot: #3B82F6; /* Blue Accent */
+  --nya-amber: #EF4444;   /* Red */
 
   /* Semantic tokens */
-  --bg-primary: #000000;
-  --bg-secondary: #050505;
-  --bg-surface: rgba(255, 255, 255, 0.02);
-  --bg-card: rgba(255, 255, 255, 0.02);
-  --bg-elevated: rgba(255, 255, 255, 0.04);
-  --bg-nav: rgba(5, 5, 5, 0.85);
+  --bg-primary: #1C100B;   /* Deep Brown background */
+  --bg-secondary: #120906; /* Darker brown background */
+  --bg-surface: rgba(255, 255, 255, 0.03);
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-elevated: rgba(255, 255, 255, 0.05);
+  --bg-nav: rgba(28, 16, 11, 0.85);
 
   --text-primary: #FFFFFF;
-  --text-secondary: #F5F0E8;
-  --text-muted: rgba(245, 240, 232, 0.45);
-  --text-faint: rgba(245, 240, 232, 0.25);
+  --text-secondary: #FDFBF7;
+  --text-muted: rgba(253, 251, 247, 0.55);
+  --text-faint: rgba(253, 251, 247, 0.35);
 
-  --border-default: rgba(255, 255, 255, 0.04);
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(255, 255, 255, 0.08);
+  --border-default: rgba(253, 251, 247, 0.08);
+  --border-subtle: rgba(253, 251, 247, 0.12);
+  --border-hover: rgba(253, 251, 247, 0.18);
 
-  --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.4);
-  --shadow-hover: 0 24px 60px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 24px 60px rgba(0, 0, 0, 0.7);
 
   /* Utility tokens for inline styles */
-  --separator: rgba(255, 255, 255, 0.04);
-  --icon-watermark: rgba(255, 255, 255, 0.08);
-  --icon-muted: rgba(255, 255, 255, 0.15);
-  --badge-bg: rgba(0, 0, 0, 0.5);
-  --badge-text: rgba(255, 255, 255, 0.8);
+  --separator: rgba(253, 251, 247, 0.08);
+  --icon-watermark: rgba(253, 251, 247, 0.08);
+  --icon-muted: rgba(253, 251, 247, 0.15);
+  --badge-bg: rgba(0, 0, 0, 0.6);
+  --badge-text: rgba(255, 255, 255, 0.9);
   --badge-text-dim: rgba(255, 255, 255, 0.7);
-  --star-empty: rgba(255, 255, 255, 0.15);
-  --wishlist-icon: rgba(255, 255, 255, 0.6);
-  --card-bg-hover: rgba(255, 255, 255, 0.04);
-  --tab-bar-bg: rgba(5, 5, 5, 0.95);
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --input-ring: rgba(184, 92, 46, 0.3);
+  --star-empty: rgba(253, 251, 247, 0.15);
+  --wishlist-icon: rgba(255, 255, 255, 0.7);
+  --card-bg-hover: rgba(253, 251, 247, 0.04);
+  --tab-bar-bg: rgba(28, 16, 11, 0.95);
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --input-ring: rgba(59, 130, 246, 0.3);
 
   --grain-opacity: 0.015;
-  --starfield-opacity: 1;
-  --aurora-opacity: 0.04;
-  --grid-opacity: 0.02;
+  --starfield-opacity: 0.3;
+  --aurora-opacity: 0.05;
+  --grid-opacity: 0.04;
 
   /* Typography */
   --font-display: 'Barlow Condensed', 'Impact', sans-serif;
@@ -88,8 +87,8 @@
 
   /* Borders */
   --border-glass: rgba(255, 255, 255, 0.06);
-  --border-ochre: rgba(184, 92, 46, 0.25);
-  --border-active: rgba(184, 92, 46, 0.5);
+  --border-ochre: rgba(139, 69, 34, 0.25);
+  --border-active: rgba(59, 130, 246, 0.5);
 
   /* Radius */
   --radius-sm: 12px;
@@ -101,59 +100,71 @@
 
 /* ═══ LIGHT THEME ═══ */
 [data-theme="light"] {
-  --nya-black: #FAFAF8;
-  --nya-void: #F2F0EC;
-  --nya-deep: #EDEAE4;
+  /* Core palette — Light theme (White + Brown + Blue + Red) */
+  --nya-black: #FFFFFF;     /* White background */
+  --nya-void: #FAF9F6;      /* Soft Ivory/Sable */
+  --nya-deep: #F4F1EB;      /* Cream/Sand */
   --nya-surface: #FFFFFF;
   --nya-card: #FFFFFF;
 
-  --nya-ochre: #B85C2E;
-  --nya-ochre-light: #D4793F;
-  --nya-ochre-dark: #8B4522;
-  --nya-sand: #8B7A68;
-  --nya-sand-light: #A69580;
+  /* Accent colors */
+  --nya-ochre: #5C2D13;     /* Rich Terracotta Brown */
+  --nya-ochre-light: #7E4221;
+  --nya-ochre-dark: #3D1C08;
+  --nya-sand: #8C6B53;
+  --nya-sand-light: #A6836B;
+  --nya-gold: #1D4ED8;      /* Royal Blue as Gold */
+  --nya-bright-gold: #2563EB; /* Bright Blue */
+  --nya-terracotta: #8B4522;
+  --nya-red: #DC2626;       /* Red */
 
-  --nya-ivory: #2D2A26;
-  --nya-white: #1A1816;
+  /* UI colors */
+  --nya-ivory: #3D251A;     /* Dark Brown text */
+  --nya-white: #FFFFFF;     /* White */
+  --nya-sirius: #DC2626;    /* Red Accent */
+  --nya-sirius-dim: #B91C1C;
+  --nya-cyan-dot: #2563EB;   /* Blue Accent */
+  --nya-amber: #EF4444;     /* Red */
 
-  --bg-primary: #FAFAF8;
-  --bg-secondary: #F2F0EC;
-  --bg-surface: rgba(0, 0, 0, 0.02);
+  /* Semantic tokens */
+  --bg-primary: #FFFFFF;    /* Pure White background */
+  --bg-secondary: #FAF8F5;  /* Soft Sable background */
+  --bg-surface: rgba(92, 58, 33, 0.02);
   --bg-card: #FFFFFF;
-  --bg-elevated: rgba(0, 0, 0, 0.03);
-  --bg-nav: rgba(255, 255, 255, 0.85);
+  --bg-elevated: rgba(92, 58, 33, 0.04);
+  --bg-nav: rgba(255, 255, 255, 0.9);
 
-  --text-primary: #1A1816;
-  --text-secondary: #2D2A26;
-  --text-muted: rgba(26, 24, 22, 0.5);
-  --text-faint: rgba(26, 24, 22, 0.25);
+  --text-primary: #2B1E17;   /* Deep Earth Brown */
+  --text-secondary: #3D2D25; /* Medium Earth Brown */
+  --text-muted: rgba(61, 45, 37, 0.6);
+  --text-faint: rgba(61, 45, 37, 0.35);
 
-  --border-default: rgba(0, 0, 0, 0.06);
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.12);
-  --border-glass: rgba(0, 0, 0, 0.06);
+  --border-default: rgba(92, 58, 33, 0.08);
+  --border-subtle: rgba(92, 58, 33, 0.12);
+  --border-hover: rgba(92, 58, 33, 0.18);
+  --border-glass: rgba(92, 58, 33, 0.08);
 
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 10px 30px rgba(92, 58, 33, 0.05);
+  --shadow-hover: 0 16px 40px rgba(92, 58, 33, 0.08);
 
   /* Utility tokens — light overrides */
-  --separator: rgba(0, 0, 0, 0.06);
-  --icon-watermark: rgba(0, 0, 0, 0.06);
-  --icon-muted: rgba(0, 0, 0, 0.12);
-  --badge-bg: rgba(0, 0, 0, 0.6);
-  --badge-text: rgba(255, 255, 255, 0.95);
-  --badge-text-dim: rgba(255, 255, 255, 0.85);
-  --star-empty: rgba(0, 0, 0, 0.12);
-  --wishlist-icon: rgba(255, 255, 255, 0.8);
-  --card-bg-hover: rgba(0, 0, 0, 0.03);
+  --separator: rgba(92, 58, 33, 0.08);
+  --icon-watermark: rgba(92, 58, 33, 0.05);
+  --icon-muted: rgba(92, 58, 33, 0.15);
+  --badge-bg: rgba(92, 58, 33, 0.8);
+  --badge-text: #FFFFFF;
+  --badge-text-dim: #FAF8F5;
+  --star-empty: rgba(92, 58, 33, 0.15);
+  --wishlist-icon: rgba(255, 255, 255, 0.9);
+  --card-bg-hover: rgba(92, 58, 33, 0.03);
   --tab-bar-bg: rgba(255, 255, 255, 0.95);
-  --glass-bg: rgba(0, 0, 0, 0.02);
-  --input-ring: rgba(184, 92, 46, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --input-ring: rgba(37, 99, 235, 0.2);
 
   --grain-opacity: 0.008;
   --starfield-opacity: 0;
-  --aurora-opacity: 0.015;
-  --grid-opacity: 0.01;
+  --aurora-opacity: 0.01;
+  --grid-opacity: 0.03;
 }
 
 /* ─── RESET & BASE ─── */

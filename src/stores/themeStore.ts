@@ -20,9 +20,12 @@ interface ColorPreset {
     gold: string
     brightGold: string
     sirius: string
-    bgPrimary: string
-    bgSecondary: string
-    borderDefault: string
+    bgPrimaryLight: string
+    bgSecondaryLight: string
+    bgPrimaryDark: string
+    bgSecondaryDark: string
+    borderDefaultLight: string
+    borderDefaultDark: string
 }
 
 // Helper to convert hex to RGB for alpha borders
@@ -41,131 +44,165 @@ export function hexToRgb(hex: string): string {
 
 export const COSMIC_THEME_PRESETS: Record<CosmicTheme, ColorPreset> = {
     ochre: {
-        ochre: '#B85C2E',
-        ochreLight: '#D4793F',
-        ochreDark: '#8B4522',
-        gold: '#D4A017',
-        brightGold: '#FFD700',
-        sirius: '#00E5A0',
-        bgPrimary: '#000000',
-        bgSecondary: '#050505',
-        borderDefault: 'rgba(255, 255, 255, 0.04)'
+        ochre: '#5C2D13', // Terracotta Brown
+        ochreLight: '#7E4221',
+        ochreDark: '#3D1C08',
+        gold: '#1D4ED8', // Royal Blue
+        brightGold: '#2563EB', // Bright Blue
+        sirius: '#DC2626', // Red
+        bgPrimaryLight: '#FFFFFF',
+        bgSecondaryLight: '#FAF8F5',
+        borderDefaultLight: 'rgba(92, 58, 33, 0.08)',
+        bgPrimaryDark: '#1C100B',
+        bgSecondaryDark: '#120906',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     },
     sirius: {
-        ochre: '#00B4D8',
-        ochreLight: '#90E0EF',
-        ochreDark: '#0077B6',
-        gold: '#00E5A0',
-        brightGold: '#00F5D4',
-        sirius: '#00F5D4',
-        bgPrimary: '#020617',
-        bgSecondary: '#080e1e',
-        borderDefault: 'rgba(0, 180, 216, 0.12)'
+        ochre: '#4A2E1B', // Deep Espresso Brown
+        ochreLight: '#6C462C',
+        ochreDark: '#2B190E',
+        gold: '#2563EB', // Electric Blue
+        brightGold: '#60A5FA', // Sky Blue
+        sirius: '#EF4444', // Red
+        bgPrimaryLight: '#FFFFFF',
+        bgSecondaryLight: '#F4F6F9',
+        borderDefaultLight: 'rgba(74, 46, 27, 0.08)',
+        bgPrimaryDark: '#140E0B',
+        bgSecondaryDark: '#0B0806',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     },
     gao: {
-        ochre: '#8b5cf6',
-        ochreLight: '#a78bfa',
-        ochreDark: '#6d28d9',
-        gold: '#FFD700',
-        brightGold: '#F59E0B',
-        sirius: '#FF007F',
-        bgPrimary: '#08040d',
-        bgSecondary: '#11091d',
-        borderDefault: 'rgba(139, 92, 246, 0.12)'
+        ochre: '#4C1F03', // Burnt Timber Brown
+        ochreLight: '#6E340E',
+        ochreDark: '#2E1100',
+        gold: '#1E40AF', // Deep Indigo Blue
+        brightGold: '#3B82F6', // Electric Blue
+        sirius: '#DC2626', // Scarlet Red
+        bgPrimaryLight: '#FAF6F0',
+        bgSecondaryLight: '#F3ECE3',
+        borderDefaultLight: 'rgba(76, 31, 3, 0.08)',
+        bgPrimaryDark: '#1D0E05',
+        bgSecondaryDark: '#120701',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     },
     eclipse: {
-        ochre: '#dc2626',
-        ochreLight: '#f87171',
-        ochreDark: '#991b1b',
-        gold: '#ea580c',
-        brightGold: '#f97316',
-        sirius: '#10b981',
-        bgPrimary: '#060101',
-        bgSecondary: '#100404',
-        borderDefault: 'rgba(220, 38, 38, 0.12)'
+        ochre: '#2A1E17', // Charcoal Brown
+        ochreLight: '#423229',
+        ochreDark: '#170E09',
+        gold: '#1D4ED8', // Midnight Blue
+        brightGold: '#2563EB', // Cobalt Blue
+        sirius: '#DC2626', // Red Alert
+        bgPrimaryLight: '#FFFFFF',
+        bgSecondaryLight: '#F2F2F2',
+        borderDefaultLight: 'rgba(42, 30, 23, 0.08)',
+        bgPrimaryDark: '#0F0A07',
+        bgSecondaryDark: '#080504',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     },
     'fusion-sahel': {
-        ochre: '#B85C2E', // Sahel Ochre/Brown
-        ochreLight: '#D4793F', // Light clay
-        ochreDark: '#8B4522', // Deep earth
-        gold: '#3B82F6', // Royal blue
-        brightGold: '#60A5FA', // Azure light blue
-        sirius: '#EF4444', // Hot neon red
-        bgPrimary: '#0E0F12', // Charcoal Grey
-        bgSecondary: '#17181D', // Slate Nebula Grey
-        borderDefault: 'rgba(184, 92, 46, 0.15)'
+        ochre: '#5C2D13', // Sahel Clay Brown
+        ochreLight: '#8B4522',
+        ochreDark: '#3D1C08',
+        gold: '#2563EB', // Oasis Blue
+        brightGold: '#60A5FA',
+        sirius: '#EF4444', // Hot Neon Red
+        bgPrimaryLight: '#FCFAF7',
+        bgSecondaryLight: '#F5EFE6',
+        borderDefaultLight: 'rgba(92, 58, 33, 0.08)',
+        bgPrimaryDark: '#21130D',
+        bgSecondaryDark: '#170D09',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     },
     'sirius-nova': {
-        ochre: '#818cf8',
-        ochreLight: '#a5b4fc',
-        ochreDark: '#4f46e5',
-        gold: '#d946ef',
-        brightGold: '#f472b6',
-        sirius: '#38bdf8',
-        bgPrimary: '#04010a',
-        bgSecondary: '#0f051b',
-        borderDefault: 'rgba(129, 140, 248, 0.15)'
+        ochre: '#3E2723', // Espresso
+        ochreLight: '#5D4037',
+        ochreDark: '#1B0000',
+        gold: '#1565C0', // Nova Royal Blue
+        brightGold: '#1E88E5', // Nova Light Blue
+        sirius: '#D84315', // Rust Red
+        bgPrimaryLight: '#FFFFFF',
+        bgSecondaryLight: '#ECEFF1',
+        borderDefaultLight: 'rgba(62, 39, 35, 0.08)',
+        bgPrimaryDark: '#150C0A',
+        bgSecondaryDark: '#0E0706',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     },
     'kemet-sun': {
-        ochre: '#b45309',
-        ochreLight: '#d97706',
-        ochreDark: '#78350f',
-        gold: '#fbbf24',
-        brightGold: '#fef08a',
-        sirius: '#10b981',
-        bgPrimary: '#030201',
-        bgSecondary: '#0e0b06',
-        borderDefault: 'rgba(251, 191, 36, 0.15)'
+        ochre: '#4E342E', // Deep Nile Bronze
+        ochreLight: '#6D4C41',
+        ochreDark: '#27120E',
+        gold: '#0D47A1', // Lapis Lazuli Blue
+        brightGold: '#1976D2', // Nile Blue
+        sirius: '#C62828', // Sun Red
+        bgPrimaryLight: '#FFFDF9',
+        bgSecondaryLight: '#FAF2E5',
+        borderDefaultLight: 'rgba(78, 52, 46, 0.08)',
+        bgPrimaryDark: '#18100E',
+        bgSecondaryDark: '#100A09',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     },
     'asante-magenta': {
-        ochre: '#db2777',
-        ochreLight: '#f472b6',
-        ochreDark: '#9d174d',
-        gold: '#f97316',
-        brightGold: '#fb923c',
-        sirius: '#22d3ee',
-        bgPrimary: '#060006',
-        bgSecondary: '#140314',
-        borderDefault: 'rgba(219, 39, 119, 0.15)'
+        ochre: '#3E2723', // Dark Cocoa
+        ochreLight: '#4E342E',
+        ochreDark: '#270C00',
+        gold: '#1A237E', // Asante Blue
+        brightGold: '#283593',
+        sirius: '#AD1457', // Magenta Red
+        bgPrimaryLight: '#FCF9F2',
+        bgSecondaryLight: '#F4EFE3',
+        borderDefaultLight: 'rgba(62, 39, 35, 0.08)',
+        bgPrimaryDark: '#150D0C',
+        bgSecondaryDark: '#0E0807',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     },
     'sahara-dune': {
-        ochre: '#ea580c',
-        ochreLight: '#f97316',
-        ochreDark: '#c2410c',
-        gold: '#eab308',
-        brightGold: '#facc15',
-        sirius: '#14b8a6',
-        bgPrimary: '#080402',
-        bgSecondary: '#150a04',
-        borderDefault: 'rgba(234, 88, 12, 0.15)'
+        ochre: '#5D4037', // Dune Shadow Brown
+        ochreLight: '#7D5648',
+        ochreDark: '#3E2723',
+        gold: '#01579B', // Oasis Blue
+        brightGold: '#0288D1',
+        sirius: '#D84315', // Sandstorm Red
+        bgPrimaryLight: '#FDFBF7',
+        bgSecondaryLight: '#F9F3E8',
+        borderDefaultLight: 'rgba(93, 64, 55, 0.08)',
+        bgPrimaryDark: '#221612',
+        bgSecondaryDark: '#170D0A',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     },
     custom: {
-        ochre: '#B85C2E',
-        ochreLight: '#D4793F',
-        ochreDark: '#8B4522',
-        gold: '#D4A017',
-        brightGold: '#FFD700',
-        sirius: '#00E5A0',
-        bgPrimary: '#000000',
-        bgSecondary: '#050505',
-        borderDefault: 'rgba(255, 255, 255, 0.04)'
+        ochre: '#5C2D13',
+        ochreLight: '#7E4221',
+        ochreDark: '#3D1C08',
+        gold: '#1D4ED8',
+        brightGold: '#2563EB',
+        sirius: '#DC2626',
+        bgPrimaryLight: '#FFFFFF',
+        bgSecondaryLight: '#FAF8F5',
+        borderDefaultLight: 'rgba(92, 58, 33, 0.08)',
+        bgPrimaryDark: '#1C100B',
+        bgSecondaryDark: '#120906',
+        borderDefaultDark: 'rgba(253, 251, 247, 0.08)'
     }
 }
 
-export const applyCosmicThemeStyles = (themeName: CosmicTheme) => {
+export const applyCosmicThemeStyles = (themeName: CosmicTheme, isDark: boolean = false) => {
     if (typeof window === 'undefined') return
     const root = document.documentElement
     
     if (themeName === 'custom') {
-        const ochre = localStorage.getItem('nya-custom-ochre') || '#B85C2E'
-        const ochreLight = localStorage.getItem('nya-custom-ochreLight') || '#D4793F'
-        const ochreDark = localStorage.getItem('nya-custom-ochreDark') || '#8B4522'
-        const gold = localStorage.getItem('nya-custom-gold') || '#D4A017'
-        const brightGold = localStorage.getItem('nya-custom-brightGold') || '#FFD700'
-        const sirius = localStorage.getItem('nya-custom-sirius') || '#00E5A0'
-        const bgPrimary = localStorage.getItem('nya-custom-bgPrimary') || '#000000'
-        const bgSecondary = localStorage.getItem('nya-custom-bgSecondary') || '#050505'
-        const borderDefault = `rgba(${hexToRgb(ochre)}, 0.12)`
+        const ochre = localStorage.getItem('nya-custom-ochre') || '#5C2D13'
+        const ochreLight = localStorage.getItem('nya-custom-ochreLight') || '#7E4221'
+        const ochreDark = localStorage.getItem('nya-custom-ochreDark') || '#3D1C08'
+        const gold = localStorage.getItem('nya-custom-gold') || '#1D4ED8'
+        const brightGold = localStorage.getItem('nya-custom-brightGold') || '#2563EB'
+        const sirius = localStorage.getItem('nya-custom-sirius') || '#DC2626'
+        const bgPrimary = isDark 
+            ? (localStorage.getItem('nya-custom-bgPrimaryDark') || '#1C100B')
+            : (localStorage.getItem('nya-custom-bgPrimaryLight') || '#FFFFFF')
+        const bgSecondary = isDark 
+            ? (localStorage.getItem('nya-custom-bgSecondaryDark') || '#120906')
+            : (localStorage.getItem('nya-custom-bgSecondaryLight') || '#FAF8F5')
+        const borderDefault = `rgba(${hexToRgb(ochre)}, 0.08)`
 
         root.style.setProperty('--nya-ochre', ochre)
         root.style.setProperty('--nya-ochre-light', ochreLight)
@@ -179,15 +216,20 @@ export const applyCosmicThemeStyles = (themeName: CosmicTheme) => {
     } else {
         const preset = COSMIC_THEME_PRESETS[themeName]
         if (!preset) return
+        
+        const bgPrimary = isDark ? preset.bgPrimaryDark : preset.bgPrimaryLight
+        const bgSecondary = isDark ? preset.bgSecondaryDark : preset.bgSecondaryLight
+        const borderDefault = isDark ? preset.borderDefaultDark : preset.borderDefaultLight
+
         root.style.setProperty('--nya-ochre', preset.ochre)
         root.style.setProperty('--nya-ochre-light', preset.ochreLight)
         root.style.setProperty('--nya-ochre-dark', preset.ochreDark)
         root.style.setProperty('--nya-gold', preset.gold)
         root.style.setProperty('--nya-bright-gold', preset.brightGold)
         root.style.setProperty('--nya-sirius', preset.sirius)
-        root.style.setProperty('--bg-primary', preset.bgPrimary)
-        root.style.setProperty('--bg-secondary', preset.bgSecondary)
-        root.style.setProperty('--border-default', preset.borderDefault)
+        root.style.setProperty('--bg-primary', bgPrimary)
+        root.style.setProperty('--bg-secondary', bgSecondary)
+        root.style.setProperty('--border-default', borderDefault)
     }
 }
 
@@ -208,19 +250,25 @@ export const useThemeStore = create<ThemeStore>((set) => ({
             const next: Theme = state.theme === 'light' ? 'dark' : 'light'
             document.documentElement.setAttribute('data-theme', next)
             localStorage.setItem('nya-theme', next)
+            applyCosmicThemeStyles(state.cosmicTheme, next === 'dark')
             return { theme: next }
         }),
 
     setTheme: (t: Theme) => {
         document.documentElement.setAttribute('data-theme', t)
         localStorage.setItem('nya-theme', t)
-        set({ theme: t })
+        set((state) => {
+            applyCosmicThemeStyles(state.cosmicTheme, t === 'dark')
+            return { theme: t }
+        })
     },
 
     setCosmicTheme: (ct: CosmicTheme) => {
-        applyCosmicThemeStyles(ct)
         localStorage.setItem('nya-cosmic-theme', ct)
-        set({ cosmicTheme: ct })
+        set((state) => {
+            applyCosmicThemeStyles(ct, state.theme === 'dark')
+            return { cosmicTheme: ct }
+        })
     }
 }))
 
@@ -232,5 +280,5 @@ if (typeof window !== 'undefined') {
 
     const savedCosmic = localStorage.getItem('nya-cosmic-theme') as CosmicTheme | null
     const initialCosmic = savedCosmic || 'ochre'
-    applyCosmicThemeStyles(initialCosmic)
+    applyCosmicThemeStyles(initialCosmic, initial === 'dark')
 }

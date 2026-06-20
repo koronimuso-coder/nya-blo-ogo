@@ -137,8 +137,8 @@ export default function Sidebar() {
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             style={{
                 position: 'fixed', top: 0, left: 0, bottom: 0,
-                background: 'rgba(5,5,5,0.95)', backdropFilter: 'blur(20px)',
-                borderRight: '1px solid rgba(255,255,255,0.04)', zIndex: 100,
+                background: 'var(--tab-bar-bg)', backdropFilter: 'blur(20px)',
+                borderRight: '1px solid var(--border-default)', zIndex: 100,
                 overflowY: 'auto', overflowX: 'hidden', paddingTop: 80,
             }}
         >
@@ -146,7 +146,7 @@ export default function Sidebar() {
             <button onClick={toggleSidebarCollapse} style={{
                 position: 'absolute', top: 24, right: -12,
                 width: 24, height: 24, borderRadius: '50%',
-                background: 'var(--nya-void)', border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--bg-secondary)', border: '1px solid var(--border-subtle)',
                 color: 'var(--nya-ochre)', display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'pointer', zIndex: 101, fontSize: 12,
             }}>
@@ -173,16 +173,16 @@ export default function Sidebar() {
                             return (
                                 <NavLink key={item.path} to={item.path} style={{ textDecoration: 'none' }}>
                                     <motion.div
-                                        whileHover={{ x: 3, background: 'rgba(255,255,255,0.03)' }}
+                                        whileHover={{ x: 3, background: 'var(--card-bg-hover)' }}
                                         style={{
                                             display: 'flex', alignItems: 'center', gap: 12,
                                             padding: sidebarCollapsed ? '10px 0' : '10px 20px',
                                             justifyContent: sidebarCollapsed ? 'center' : 'flex-start',
                                             cursor: 'pointer', position: 'relative',
-                                            color: isActive ? 'var(--nya-ochre)' : 'rgba(245,240,232,0.5)',
+                                            color: isActive ? 'var(--nya-ochre)' : 'var(--text-muted)',
                                             fontSize: '0.8rem', fontWeight: isActive ? 700 : 500,
                                             borderRadius: 'var(--radius-sm)', margin: '1px 8px',
-                                            background: isActive ? 'rgba(184,92,46,0.08)' : 'transparent',
+                                            background: isActive ? 'var(--bg-elevated)' : 'transparent',
                                             transition: 'all 0.2s',
                                         }}
                                     >
@@ -207,7 +207,7 @@ export default function Sidebar() {
                         })}
 
                         {gi < navGroups.length - 1 && (
-                            <div style={{ height: 1, margin: '6px 20px', background: 'rgba(255,255,255,0.03)' }} />
+                            <div style={{ height: 1, margin: '6px 20px', background: 'var(--border-default)' }} />
                         )}
                     </div>
                 ))}
