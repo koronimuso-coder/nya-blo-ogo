@@ -3,6 +3,7 @@ import { router } from './router'
 import ParticleBackground from './components/animations/ParticleBackground'
 import GrainOverlay from './components/animations/GrainOverlay'
 import FloatingSymbols from './components/animations/FloatingSymbols'
+import SplashScreen from './components/animations/SplashScreen'
 import SmoothScroll from './components/animations/SmoothScroll'
 import ErrorBoundary from './components/ErrorBoundary'
 import AmbientAudio from './components/AmbientAudio'
@@ -31,6 +32,7 @@ export default function App() {
         <ParticleBackground />
         <FloatingSymbols />
         <GrainOverlay />
+        <SplashScreen />
 
         {/* Global overlays that DON'T need Router context */}
         <AchievementToast />

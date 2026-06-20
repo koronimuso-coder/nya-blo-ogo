@@ -2017,3 +2017,105 @@ html *:not([style*="transition"]) {
   color: var(--nya-ochre);
   background: rgba(184,92,46,0.05);
 }
+
+/* ═══════════════════════════════════════════
+   LIGHT MODE CONTRAST & LEGIBILITY OVERRIDES
+   ═══════════════════════════════════════════ */
+[data-theme="light"] {
+  /* Ensure core custom text colors are deep brown */
+  --text-primary: #2B1E17;
+  --text-secondary: #3D2D25;
+}
+
+[data-theme="light"] h1:not(.no-light-override):not(.no-light-override *),
+[data-theme="light"] h2:not(.no-light-override):not(.no-light-override *),
+[data-theme="light"] h3:not(.no-light-override):not(.no-light-override *),
+[data-theme="light"] h4:not(.no-light-override):not(.no-light-override *),
+[data-theme="light"] h5:not(.no-light-override):not(.no-light-override *),
+[data-theme="light"] h6:not(.no-light-override):not(.no-light-override *) {
+  color: #2B1E17 !important;
+}
+
+/* Overriding inline styling like style={{ color: '#fff' }} or color: 'white' */
+[data-theme="light"] [style*="color: #fff"]:not(.no-light-override):not(.no-light-override *):not(.btn-primary):not(.btn-primary *):not(button[type="submit"]):not(button[type="submit"] *):not(.badge):not(.badge *):not(.status):not(.status *):not(.tag):not(.tag *),
+[data-theme="light"] [style*="color:#fff"]:not(.no-light-override):not(.no-light-override *):not(.btn-primary):not(.btn-primary *):not(button[type="submit"]):not(button[type="submit"] *):not(.badge):not(.badge *):not(.status):not(.status *):not(.tag):not(.tag *),
+[data-theme="light"] [style*="color: white"]:not(.no-light-override):not(.no-light-override *):not(.btn-primary):not(.btn-primary *):not(button[type="submit"]):not(button[type="submit"] *):not(.badge):not(.badge *):not(.status):not(.status *):not(.tag):not(.tag *),
+[data-theme="light"] [style*="color:white"]:not(.no-light-override):not(.no-light-override *):not(.btn-primary):not(.btn-primary *):not(button[type="submit"]):not(button[type="submit"] *):not(.badge):not(.badge *):not(.status):not(.status *):not(.tag):not(.tag *),
+[data-theme="light"] [style*="color: #FFF"]:not(.no-light-override):not(.no-light-override *):not(.btn-primary):not(.btn-primary *):not(button[type="submit"]):not(button[type="submit"] *):not(.badge):not(.badge *):not(.status):not(.status *):not(.tag):not(.tag *),
+[data-theme="light"] [style*="color:#FFF"]:not(.no-light-override):not(.no-light-override *):not(.btn-primary):not(.btn-primary *):not(button[type="submit"]):not(button[type="submit"] *):not(.badge):not(.badge *):not(.status):not(.status *):not(.tag):not(.tag *) {
+  color: #2B1E17 !important;
+}
+
+/* Ensure buttons without class btn-primary/type=submit are styled properly in light mode if they had white color */
+[data-theme="light"] button:not(.btn-primary):not(.btn-nexus):not([type="submit"]):not(.no-light-override):not(.no-light-override *) {
+  color: #2B1E17 !important;
+}
+
+/* Keep primary buttons and badges text white */
+[data-theme="light"] .btn-primary,
+[data-theme="light"] .btn-primary *,
+[data-theme="light"] .btn-nexus,
+[data-theme="light"] .btn-nexus *,
+[data-theme="light"] button[type="submit"],
+[data-theme="light"] button[type="submit"] *,
+[data-theme="light"] .badge,
+[data-theme="light"] .badge *,
+[data-theme="light"] .status,
+[data-theme="light"] .status *,
+[data-theme="light"] .tag,
+[data-theme="light"] .tag * {
+  color: #FFFFFF !important;
+}
+
+/* Forms contrast overrides */
+[data-theme="light"] input:not(.no-light-override):not(.no-light-override *),
+[data-theme="light"] select:not(.no-light-override):not(.no-light-override *),
+[data-theme="light"] textarea:not(.no-light-override):not(.no-light-override *) {
+  background-color: #FAF8F5 !important;
+  color: #2B1E17 !important;
+  border: 1px solid rgba(92, 58, 33, 0.15) !important;
+}
+
+[data-theme="light"] select option {
+  background-color: #FFFFFF !important;
+  color: #2B1E17 !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: rgba(61, 45, 37, 0.6) !important;
+}
+
+/* Override inline dark backgrounds like rgba(0,0,0,0.2) or rgba(0,0,0,0.3) inside cards/containers */
+[data-theme="light"] [style*="background: rgba(0,0,0"],
+[data-theme="light"] [style*="background:rgba(0,0,0"],
+[data-theme="light"] [style*="background: rgba(0, 0, 0"],
+[data-theme="light"] [style*="background:rgba(0, 0, 0"] {
+  background-color: #FAF8F5 !important;
+  border-color: rgba(92, 58, 33, 0.15) !important;
+}
+
+/* Glassmorphism card overrides */
+[data-theme="light"] .toguna-glass,
+[data-theme="light"] .toguna-glass-strong,
+[data-theme="light"] .glass-card {
+  background-color: #FFFFFF !important;
+  border-color: rgba(92, 58, 33, 0.15) !important;
+  box-shadow: 0 4px 20px rgba(92, 58, 33, 0.06) !important;
+}
+
+/* Lucide SVGs */
+[data-theme="light"] svg[style*="color: #fff"]:not(.no-light-override *):not(.btn-primary *):not(button *),
+[data-theme="light"] svg[style*="color:#fff"]:not(.no-light-override *):not(.btn-primary *):not(button *),
+[data-theme="light"] svg[style*="color: white"]:not(.no-light-override *):not(.btn-primary *):not(button *),
+[data-theme="light"] svg[style*="color:white"]:not(.no-light-override *):not(.btn-primary *):not(button *) {
+  stroke: #2B1E17 !important;
+  color: #2B1E17 !important;
+}
+
+/* Add custom transition overrides */
+[data-theme="light"] .toguna-glass *,
+[data-theme="light"] .toguna-glass-strong *,
+[data-theme="light"] .glass-card * {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}

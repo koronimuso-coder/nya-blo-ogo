@@ -102,6 +102,7 @@ export default function Wallet() {
                                 onMouseMove={handleMouseMove}
                                 onMouseLeave={handleMouseLeave}
                                 onClick={() => setCardFlipped(!cardFlipped)}
+                                className="no-light-override"
                                 style={{
                                     width: '100%',
                                     aspectRatio: '1.58 / 1',
