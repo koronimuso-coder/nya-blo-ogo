@@ -17,8 +17,8 @@ interface Track {
 
 const TRACKS: Track[] = [
     { id: '1', title: 'Harpe de Nommo', artist: 'Sages de Bandiagara', desc: 'Cordes de kora synthétiques générées en temps réel aux harmonies douces.', bg: 'linear-gradient(135deg, #B85C2E 0%, #D4A017 100%)' },
-    { id: '2', title: 'Vent du Sahel', artist: 'Constellation Sirius', desc: 'Bruits blancs filtrés modulant lentement comme des brises sahariennes.', bg: 'linear-gradient(135deg, #0a1a2e 0%, #00E5A0 100%)' },
-    { id: '3', title: 'Écho de Sirius B', artist: 'Oracle Cosmique', desc: 'Pads profonds à modulation de fréquences lointaines.', bg: 'linear-gradient(135deg, #1a0a2e 0%, #8b5cf6 100%)' },
+    { id: '2', title: 'Vent du Sahel', artist: 'Constellation Sirius', desc: 'Bruits blancs filtrés modulant lentement comme des brises sahariennes.', bg: 'linear-gradient(135deg, #0a1a2e 0%, var(--nya-bright-gold) 100%)' },
+    { id: '3', title: 'Écho de Sirius B', artist: 'Oracle Cosmique', desc: 'Pads profonds à modulation de fréquences lointaines.', bg: 'linear-gradient(135deg, #1C100B 0%, var(--nya-ochre) 100%)' },
 ]
 
 // Drum synthesis engine helpers using Web Audio API
@@ -710,7 +710,7 @@ export default function Music() {
                             { name: 'DUNUN (Basse)', color: 'var(--nya-gold)' },
                             { name: 'DJEMBÉ (Slap)', color: 'var(--nya-ochre)' },
                             { name: 'TAMA (Talking Drum)', color: 'var(--nya-sirius)' },
-                            { name: 'SHÉKÉRÉ (Sec)', color: '#a78bfa' },
+                            { name: 'SHÉKÉRÉ (Sec)', color: 'var(--nya-sand)' },
                         ].map((inst, rowIdx) => (
                             <div key={rowIdx} style={{ display: 'grid', gridTemplateColumns: '1.2fr repeat(8, 1fr)', gap: 12, alignItems: 'center' }}>
                                 {/* Instrument label */}

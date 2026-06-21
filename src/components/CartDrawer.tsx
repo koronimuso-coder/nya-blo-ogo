@@ -14,23 +14,80 @@ export default function CartDrawer() {
     const [checkoutOpen, setCheckoutOpen] = useState(false)
     const [processing, setProcessing] = useState(false)
     const [success, setSuccess] = useState(false)
+    const [paymentMethod, setPaymentMethod] = useState<'card' | 'momo'>('card')
+    const [momoProvider, setMomoProvider] = useState<'wave' | 'orange' | 'mtn'>('wave')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [otpCode, setOtpCode] = useState('')
+    const [processingMessage, setProcessingMessage] = useState('SCULPTURE DU PORTAIL...')
 
     const formatPrice = (n: number) => n.toLocaleString('fr-FR') + ' FCFA'
+
+    const handleMomoProviderChange = (provider: 'wave' | 'orange' | 'mtn') => {
+        setMomoProvider(provider)
+        if (provider === 'wave' || provider === 'orange') {
+            setPhoneNumber('+2250708736871')
+        } else if (provider === 'mtn') {
+            setPhoneNumber('+2250556966492')
+        }
+    }
 
     const handleCheckoutInit = () => {
         setCheckoutOpen(true)
         closeCart()
+        if (momoProvider === 'wave' || momoProvider === 'orange') {
+            setPhoneNumber('+2250708736871')
+        } else {
+            setPhoneNumber('+2250556966492')
+        }
+        setOtpCode('')
     }
 
     const confirmOrder = () => {
         setProcessing(true)
-        // Simulate cosmic portal verification latency
-        setTimeout(() => {
-            setProcessing(false)
-            setSuccess(true)
-            checkoutCart(items)
-            clearCart()
-        }, 2200)
+        if (paymentMethod === 'card') {
+            setProcessingMessage('SCULPTURE DU PORTAIL...')
+            setTimeout(() => {
+                setProcessing(false)
+                setSuccess(true)
+                checkoutCart(items)
+                clearCart()
+            }, 2200)
+        } else {
+            if (momoProvider === 'wave') {
+                setProcessingMessage('ENVOI NOTIFICATION WAVE...')
+                setTimeout(() => {
+                    setProcessingMessage('ATTENTE DE VALIDATION SUR L\'APP WAVE...')
+                    setTimeout(() => {
+                        setProcessing(false)
+                        setSuccess(true)
+                        checkoutCart(items)
+                        clearCart()
+                    }, 1500)
+                }, 1200)
+            } else if (momoProvider === 'orange') {
+                setProcessingMessage('VÉRIFICATION CODE OTP ORANGE (*144*82#)...')
+                setTimeout(() => {
+                    setProcessingMessage('COMMUNICATION AVEC LE SERVEUR ORANGE...')
+                    setTimeout(() => {
+                        setProcessing(false)
+                        setSuccess(true)
+                        checkoutCart(items)
+                        clearCart()
+                    }, 1200)
+                }, 1200)
+            } else { // mtn
+                setProcessingMessage('LANCEMENT DE L\'INVITE USSD MTN (*133#)...')
+                setTimeout(() => {
+                    setProcessingMessage('ATTENTE CONFIRMATION CODE PIN SUR MOBILE...')
+                    setTimeout(() => {
+                        setProcessing(false)
+                        setSuccess(true)
+                        checkoutCart(items)
+                        clearCart()
+                    }, 1500)
+                }, 1200)
+            }
+        }
     }
 
     const closeAll = () => {
@@ -352,45 +409,164 @@ export default function CartDrawer() {
                                             Vous êtes sur le point de valider la commande de vos artefacts sacrés. La transaction sera enregistrée dans le grand registre de Sirius.
                                         </p>
 
-                                        {/* Card Simulator interface */}
-                                        <div style={{
-                                            background: 'var(--bg-primary)',
-                                            border: '1px solid var(--border-default)',
-                                            borderRadius: 16, padding: '16px 20px',
-                                            textAlign: 'left', marginBottom: 24
-                                        }}>
-                                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                                <span style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--text-muted)' }}>PORTEUR</span>
-                                                <span style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--text-muted)' }}>SOCIÉTÉ</span>
-                                            </div>
-                                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 }}>
-                                                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#fff', textTransform: 'uppercase' }}>
-                                                    {user?.displayName || 'Initié'}
-                                                </span>
-                                                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--nya-gold)', fontFamily: 'var(--font-display)' }}>
-                                                    SIRIUS CARD
-                                                </span>
-                                            </div>
+                                        {/* Payment method selector */}
+                                        <div style={{ display: 'flex', gap: 10, marginBottom: 20 }}>
+                                            <button
+                                                type="button"
+                                                disabled={processing}
+                                                onClick={() => setPaymentMethod('card')}
+                                                style={{
+                                                    flex: 1, padding: '12px 14px', borderRadius: 12, cursor: processing ? 'not-allowed' : 'pointer',
+                                                    background: paymentMethod === 'card' ? 'rgba(59,130,246,0.1)' : 'transparent',
+                                                    border: '1.5px solid ' + (paymentMethod === 'card' ? 'var(--nya-gold)' : 'var(--border-subtle)'),
+                                                    color: '#fff', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase'
+                                                }}
+                                            >
+                                                💳 Carte Sirius
+                                            </button>
+                                            <button
+                                                type="button"
+                                                disabled={processing}
+                                                onClick={() => { setPaymentMethod('momo'); handleMomoProviderChange(momoProvider); }}
+                                                style={{
+                                                    flex: 1, padding: '12px 14px', borderRadius: 12, cursor: processing ? 'not-allowed' : 'pointer',
+                                                    background: paymentMethod === 'momo' ? 'rgba(239,68,68,0.1)' : 'transparent',
+                                                    border: '1.5px solid ' + (paymentMethod === 'momo' ? 'var(--nya-sirius)' : 'var(--border-subtle)'),
+                                                    color: '#fff', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase'
+                                                }}
+                                            >
+                                                📱 Mobile Money
+                                            </button>
                                         </div>
+
+                                        {paymentMethod === 'card' ? (
+                                            /* Card Simulator interface */
+                                            <div style={{
+                                                background: 'var(--bg-primary)',
+                                                border: '1px solid var(--border-default)',
+                                                borderRadius: 16, padding: '16px 20px',
+                                                textAlign: 'left', marginBottom: 24
+                                            }}>
+                                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                                    <span style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--text-muted)' }}>PORTEUR</span>
+                                                    <span style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--text-muted)' }}>SOCIÉTÉ</span>
+                                                </div>
+                                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 }}>
+                                                    <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#fff', textTransform: 'uppercase' }}>
+                                                        {user?.displayName || 'Initié'}
+                                                    </span>
+                                                    <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--nya-gold)', fontFamily: 'var(--font-display)' }}>
+                                                        SIRIUS CARD
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            /* Mobile Money interface */
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 24, textAlign: 'left' }}>
+                                                {/* MOMO Provider Tabs */}
+                                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+                                                    <button
+                                                        type="button"
+                                                        disabled={processing}
+                                                        onClick={() => handleMomoProviderChange('wave')}
+                                                        style={{
+                                                            padding: '12px 8px', borderRadius: 10, cursor: processing ? 'not-allowed' : 'pointer',
+                                                            background: momoProvider === 'wave' ? 'rgba(37,99,235,0.1)' : 'transparent',
+                                                            border: '1.5px solid ' + (momoProvider === 'wave' ? '#2563EB' : 'var(--border-subtle)'),
+                                                            color: '#fff', fontSize: '0.7rem', fontWeight: 800,
+                                                            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4
+                                                        }}
+                                                    >
+                                                        <span style={{ color: '#2563EB', fontSize: '1rem' }}>🔷</span>
+                                                        <span>WAVE</span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        disabled={processing}
+                                                        onClick={() => handleMomoProviderChange('orange')}
+                                                        style={{
+                                                            padding: '12px 8px', borderRadius: 10, cursor: processing ? 'not-allowed' : 'pointer',
+                                                            background: momoProvider === 'orange' ? 'rgba(239,68,68,0.1)' : 'transparent',
+                                                            border: '1.5px solid ' + (momoProvider === 'orange' ? '#EF4444' : 'var(--border-subtle)'),
+                                                            color: '#fff', fontSize: '0.7rem', fontWeight: 800,
+                                                            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4
+                                                        }}
+                                                    >
+                                                        <span style={{ color: '#EF4444', fontSize: '1rem' }}>🍊</span>
+                                                        <span>ORANGE</span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        disabled={processing}
+                                                        onClick={() => handleMomoProviderChange('mtn')}
+                                                        style={{
+                                                            padding: '12px 8px', borderRadius: 10, cursor: processing ? 'not-allowed' : 'pointer',
+                                                            background: momoProvider === 'mtn' ? 'rgba(212,160,23,0.1)' : 'transparent',
+                                                            border: '1.5px solid ' + (momoProvider === 'mtn' ? 'var(--nya-gold)' : 'var(--border-subtle)'),
+                                                            color: '#fff', fontSize: '0.7rem', fontWeight: 800,
+                                                            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4
+                                                        }}
+                                                    >
+                                                        <span style={{ color: '#D4BFA8', fontSize: '1rem' }}>🟡</span>
+                                                        <span>MTN</span>
+                                                    </button>
+                                                </div>
+
+                                                {/* Phone Number Field */}
+                                                <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                                                    <label style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase' }}>Numéro de Téléphone</label>
+                                                    <input
+                                                        type="tel"
+                                                        value={phoneNumber}
+                                                        onChange={(e) => setPhoneNumber(e.target.value)}
+                                                        disabled={processing}
+                                                        placeholder="Ex: +2250708736871"
+                                                        style={{
+                                                            padding: '12px 16px', borderRadius: 10, background: 'var(--bg-primary)',
+                                                            border: '1px solid var(--border-default)', color: 'var(--text-primary)', fontSize: '0.8rem', outline: 'none'
+                                                        }}
+                                                    />
+                                                </div>
+
+                                                {/* Orange OTP Code Field */}
+                                                {momoProvider === 'orange' && (
+                                                    <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                                                        <label style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase' }}>Code d'Autorisation OTP (*144*82#)</label>
+                                                        <input
+                                                            type="text"
+                                                            value={otpCode}
+                                                            onChange={(e) => setOtpCode(e.target.value)}
+                                                            disabled={processing}
+                                                            placeholder="Ex: 8824"
+                                                            maxLength={4}
+                                                            style={{
+                                                                padding: '12px 16px', borderRadius: 10, background: 'var(--bg-primary)',
+                                                                border: '1px solid var(--border-default)', color: 'var(--text-primary)', fontSize: '0.8rem', outline: 'none'
+                                                            }}
+                                                        />
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
 
                                         {/* Actions */}
                                         <motion.button
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
                                             onClick={confirmOrder}
-                                            disabled={processing}
+                                            disabled={processing || (paymentMethod === 'momo' && !phoneNumber.trim()) || (paymentMethod === 'momo' && momoProvider === 'orange' && !otpCode.trim())}
                                             style={{
                                                 width: '100%', padding: '16px', borderRadius: 12,
                                                 background: 'var(--nya-ochre)', border: 'none',
                                                 color: '#fff', fontWeight: 800, letterSpacing: '0.15em',
-                                                textTransform: 'uppercase', cursor: 'pointer',
+                                                textTransform: 'uppercase', cursor: (processing || (paymentMethod === 'momo' && !phoneNumber.trim())) ? 'not-allowed' : 'pointer',
                                                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8
                                             }}
                                         >
                                             {processing ? (
                                                 <>
                                                     <div style={{ width: 14, height: 14, border: '2px solid #fff', borderTop: '2px solid transparent', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
-                                                    SCULPTURE DU PORTAIL...
+                                                    {processingMessage}
                                                 </>
                                             ) : (
                                                 <>
@@ -403,16 +579,16 @@ export default function CartDrawer() {
                                     <>
                                         <div style={{
                                             width: 70, height: 70, borderRadius: '50%',
-                                            background: 'rgba(0,229,160,0.1)', display: 'flex',
+                                            background: 'rgba(59,130,246,0.1)', display: 'flex',
                                             alignItems: 'center', justifyContent: 'center',
-                                            margin: '0 auto 24px', color: '#00E5A0'
+                                            margin: '0 auto 24px', color: 'var(--nya-bright-gold)'
                                         }}>
                                             <Sparkles size={36} />
                                         </div>
 
                                         <h3 style={{
                                             fontFamily: 'var(--font-display)', fontSize: '1.5rem',
-                                            fontWeight: 900, color: '#00E5A0', marginBottom: 12,
+                                            fontWeight: 900, color: 'var(--nya-bright-gold)', marginBottom: 12,
                                             textTransform: 'uppercase'
                                         }}>
                                             Transaction Réussie !

@@ -73,15 +73,15 @@ export default function AIAssistant() {
             
             {/* Toggle button */}
             <motion.button
-                whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0,229,160,0.4)' }}
+                whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(59, 130, 246, 0.4)' }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
                 style={{
                     width: 56, height: 56, borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #00E5A0 0%, #00CED1 100%)',
+                    background: 'linear-gradient(135deg, var(--nya-bright-gold) 0%, var(--nya-gold) 100%)',
                     border: 'none', color: '#fff', cursor: 'pointer',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: '0 8px 30px rgba(0,229,160,0.3)',
+                    boxShadow: '0 8px 30px rgba(59, 130, 246, 0.3)',
                 }}
                 aria-label="Contacter l'Oracle Nommo AI"
             >
@@ -99,23 +99,23 @@ export default function AIAssistant() {
                             position: 'absolute', bottom: 70, right: 0,
                             width: 360, height: 480,
                             background: 'var(--nya-deep)',
-                            border: '1px solid rgba(0,229,160,0.3)',
+                            border: '1px solid rgba(59, 130, 246, 0.3)',
                             borderRadius: 20,
-                            boxShadow: '0 20px 50px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,229,160,0.05)',
+                            boxShadow: '0 20px 50px rgba(0,0,0,0.5), inset 0 0 20px rgba(59, 130, 246, 0.05)',
                             display: 'flex', flexDirection: 'column', overflow: 'hidden'
                         }}
                     >
                         {/* Header */}
                         <div style={{
-                            padding: '16px 20px', background: 'rgba(0,229,160,0.08)',
+                            padding: '16px 20px', background: 'rgba(59, 130, 246, 0.08)',
                             borderBottom: '1px solid var(--border-default)',
                             display: 'flex', alignItems: 'center', justifyContent: 'space-between'
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                                <Sparkles size={16} style={{ color: '#00E5A0' }} />
+                                <Sparkles size={16} style={{ color: 'var(--nya-bright-gold)' }} />
                                 <div>
                                     <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 900, color: '#fff' }}>ORACLE NOMMO AI</div>
-                                    <div style={{ fontSize: '0.55rem', color: '#00E5A0', fontWeight: 700, letterSpacing: '0.1em' }}>SIRIUS B SYNCED</div>
+                                    <div style={{ fontSize: '0.55rem', color: 'var(--nya-bright-gold)', fontWeight: 700, letterSpacing: '0.1em' }}>SIRIUS B SYNCED</div>
                                 </div>
                             </div>
                         </div>
@@ -130,11 +130,11 @@ export default function AIAssistant() {
                                         style={{
                                             alignSelf: isNommo ? 'flex-start' : 'flex-end',
                                             maxWidth: '80%',
-                                            background: isNommo ? 'var(--bg-elevated)' : 'var(--nya-ochre)',
-                                            border: isNommo ? '1px solid var(--border-default)' : 'none',
+                                            background: isNommo ? 'var(--bg-secondary)' : 'var(--nya-ochre)',
+                                            border: '1px solid ' + (isNommo ? 'var(--border-default)' : 'transparent'),
                                             borderRadius: isNommo ? '16px 16px 16px 4px' : '16px 16px 4px 16px',
                                             padding: '12px 16px',
-                                            color: '#fff',
+                                            color: isNommo ? 'var(--text-primary)' : '#FFFFFF',
                                             fontSize: '0.8rem',
                                             lineHeight: 1.5
                                         }}
@@ -165,7 +165,7 @@ export default function AIAssistant() {
                                     style={{
                                         padding: '6px 12px', background: 'var(--bg-primary)',
                                         border: '1px solid var(--border-hover)', borderRadius: 20,
-                                        color: '#00E5A0', fontSize: '0.65rem', fontWeight: 700,
+                                        color: 'var(--nya-bright-gold)', fontSize: '0.65rem', fontWeight: 700,
                                         cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0
                                     }}
                                 >
@@ -188,7 +188,7 @@ export default function AIAssistant() {
                                     style={{
                                         flex: 1, padding: '10px 14px',
                                         background: 'var(--bg-primary)', border: '1px solid var(--border-default)',
-                                        borderRadius: 12, color: '#fff', fontSize: '0.8rem', outline: 'none'
+                                        borderRadius: 12, color: 'var(--text-primary)', fontSize: '0.8rem', outline: 'none'
                                     }}
                                 />
                                 <button
